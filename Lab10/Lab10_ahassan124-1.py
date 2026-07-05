@@ -44,3 +44,12 @@ class WordAnalyzer:
 
         for word in sorted(self.__frequencies.keys()):
             print(f"{word:<20} :: {self.__frequencies[word]}")
+
+
+def main():
+    files = {
+        "1": Path("princess_mars.txt"),
+        "2": Path("Tarzan.txt"),
+        "3": Path("treasure_island.txt"),
+        "4": Path("monte_cristo.txt")
+    }
