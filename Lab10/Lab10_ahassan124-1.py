@@ -6,15 +6,6 @@ Starter Code: None
 Date: July 2026
 """
 
-"""
-Program: Word Analyzer
-Author: Your Name
-Purpose: Reads a text file selected by the user, counts the frequency of
-each word, and prints the results alphabetically.
-Starter Code: None
-Date: July 2026
-"""
-
 from pathlib import Path
 import string
 
@@ -47,3 +38,9 @@ class WordAnalyzer:
         except FileNotFoundError:
             print("Error: File not found.")
             return False
+
+    def print_report(self):
+        print()
+
+        for word in sorted(self.__frequencies.keys()):
+            print(f"{word:<20} :: {self.__frequencies[word]}")
