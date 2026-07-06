@@ -47,13 +47,16 @@ class WordAnalyzer:
 
 
 def main():
-    files = {
-        "1": Path("princess_mars.txt"),
-        "2": Path("Tarzan.txt"),
-        "3": Path("treasure_island.txt"),
-        "4": Path("monte_cristo.txt")
-    }
+    
+    script_dir = Path(__file__).parent 
 
+    
+    files = {
+        "1": script_dir / "princess_mars.txt",
+        "2": script_dir / "Tarzan.txt",
+        "3": script_dir / "treasure_island.txt",
+        "4": script_dir / "monte_cristo.txt"
+    }
     while True:
 
         print("\n--- Word Analyzer ---")
