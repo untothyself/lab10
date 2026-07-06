@@ -53,3 +53,34 @@ def main():
         "3": Path("treasure_island.txt"),
         "4": Path("monte_cristo.txt")
     }
+
+    while True:
+
+        print("\n--- Word Analyzer ---")
+        print("1. Princess of Mars")
+        print("2. Tarzan")
+        print("3. Treasure Island")
+        print("4. Monte Cristo")
+        print("5. Exit")
+
+        choice = input("\nEnter your choice (1-5): ")
+
+        if choice == "5":
+            print("Goodbye!")
+            break
+
+        if choice not in files:
+            print("Invalid choice. Please select from 1-5.")
+            input("\nPress Enter to return to the menu...")
+            continue
+
+        analyzer = WordAnalyzer(files[choice])
+
+        print(f"\nProcessing '{files[choice].name}'...\n")
+
+        if analyzer.process_file():
+            analyzer.print_report()
+
+        input("\nPress Enter to return to the menu...")
+
+main()
